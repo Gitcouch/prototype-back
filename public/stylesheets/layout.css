@@ -1,0 +1,94 @@
+body {
+  background-color: #214a78;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #619bdc;
+  padding: 2px 0;
+}
+
+/* .fixed-header {
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000; 
+} */
+
+header h1 {
+  color: rgb(249, 245, 245);
+  font-size: 40px;
+  font-weight: 100px;
+  font-style: italic;
+  bottom: 35px;
+  margin-right: 25px;
+}
+
+img[src="/images/logo.png"] {
+  width: 65px; 
+  height: auto;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #4677af;
+  text-align: center;
+  padding: 8px;
+}
+
+h1 {
+  color: rgb(249, 245, 245);
+  font-size: 35px;
+  font-weight: 100px;
+  font-style: italic;
+  bottom: 35px;
+  margin-right: 25px;
+}
+
+h2 {
+  font-size: 25px;
+  color: aliceblue;
+}
+
+h3 {
+  font-size: 10px;
+  color: rgb(150, 195, 234);
+}
+
+h4 {
+  font-size: 14px;
+  color: rgb(131, 243, 103);
+}
+
+.fixie {
+  height: 5px;
+  background-color: #102e53;
+  margin-bottom: 8px;
+}
+
+main {
+  margin: 15px;
+}
+
+p {
+  font-size: 15px;
+  color: rgb(107, 185, 245);
+  margin-right: 10px;
+}
+
+.text-secondary {
+  font-size: 15px;
+  text-align: center;
+  color: rgb(152, 154, 155);
+  margin-right: 10px;
+}
+.text-end {
+  margin-right: 10px;
+}

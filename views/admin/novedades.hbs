@@ -1,0 +1,63 @@
+<link rel='stylesheet' href='/stylesheets/layout.css' />
+<div class="container" style="margin-top: 10px;">
+  <div class="row">
+    <p class="center">Hola
+      {{user}}!
+    </p>
+    {{!-- file one --}}
+    <div>
+      <h1 class="text-center">Bienvenida a la aplicación</h1>
+      <div>
+        <p class="text-secondary">
+          En esta sección le mostraremos las novedades.
+        </p>
+      </div>
+      {{!-- file two --}}
+      <div class="row">
+        <a style="max-width: 140px; margin-top: 10px;" class="btn btn-primary" , href="/admin/novedades/agregar">Nuevo
+        </a>
+      </div>
+      <hr>
+      <div>
+        {{!-- file three --}}
+        <div class="row">
+          <div class="col">
+            <table class="table">
+              <thead>
+                <tr class="table-dark">
+                  <th scope="col"></th>
+                  <th scope="col">Título</th>
+                  <th class="text-end">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each novedades}}
+                <tr>
+                  <th scope="row">{{id}}</th>
+                  <td>{{titulo}}</td>
+                  <td class="text-end">
+                    <a class="btn btn-secondary" href="">
+                      <i class="fas fa-edit" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-secondary" href=" ">
+                      <i class="fa-regular fa-trash" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            <div>
+              <div>
+                <p class="text-center">"Tenga una mejor experiencia con envíos en línea de TRANSPORTE.
+                  Envíe y entregue paquetes más rápida y fácilmente que nunca."
+                  <p />
+                  <hr>
+                  <a style="margin-left: -10px" class="btn btn-danger" , href="/admin/login/logout">Cerrar
+                    sección
+                    <i style="min-width: 32px; margin-left: 10px;" class="fas fa-sign-out-alt">
+                    </i>
+                  </a>
+              </div>
+            </div>
+          </div>

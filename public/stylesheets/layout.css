@@ -1,13 +1,13 @@
 body {
-  background-color: #214a78;
+  background-color: #000000;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #619bdc;
-  padding: 2px 0;
+  background-color: #fc0000;
+  padding: 5 5 5 20;
 }
 
 /* .fixed-header {
@@ -20,7 +20,7 @@ header {
 
 header h1 {
   color: rgb(249, 245, 245);
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 100px;
   font-style: italic;
   bottom: 35px;
@@ -28,17 +28,17 @@ header h1 {
 }
 
 img[src="/images/logo.png"] {
-  width: 65px; 
+  width: 80px; 
   height: auto;
   margin: 20px;
-  border-radius: 50%;
+
 }
 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #4677af;
+  background-color: #800000;
   text-align: center;
   padding: 8px;
 }

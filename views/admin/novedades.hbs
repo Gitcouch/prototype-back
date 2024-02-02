@@ -1,63 +1,62 @@
 <link rel='stylesheet' href='/stylesheets/layout.css' />
+
 <div class="container" style="margin-top: 10px;">
   <div class="row">
-    <p class="center">Hola
-      {{user}}!
-    </p>
-    {{!-- file one --}}
-    <div>
-      <h1 class="text-center">Bienvenida a la aplicación</h1>
+    <div class="col">
+      <p class="left">Hola {{usuario}} ! </p>
+      {{!-- file one --}}
       <div>
-        <p class="text-secondary">
-          En esta sección le mostraremos las novedades.
-        </p>
-      </div>
-      {{!-- file two --}}
-      <div class="row">
-        <a style="max-width: 140px; margin-top: 10px;" class="btn btn-primary" , href="/admin/novedades/agregar">Nuevo
-        </a>
-      </div>
-      <hr>
-      <div>
-        {{!-- file three --}}
+        <h1 class="text-center">Bienvenida a la aplicación</h1>
+        <div>
+          <p class="text-secondary">
+            En esta sección le mostraremos las novedades.
+          </p>
+        </div>
+        {{!-- file two --}}
         <div class="row">
-          <div class="col">
-            <table class="table">
-              <thead>
-                <tr class="table-dark">
-                  <th scope="col"></th>
-                  <th scope="col">Título</th>
-                  <th class="text-end">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {{#each novedades}}
-                <tr>
-                  <th scope="row">{{id}}</th>
-                  <td>{{titulo}}</td>
-                  <td class="text-end">
-                    <a class="btn btn-secondary" href="">
-                      <i class="fas fa-edit" aria-hidden="true"></i>
-                    </a>
-                    <a class="btn btn-secondary" href=" ">
-                      <i class="fa-regular fa-trash" aria-hidden="true"></i>
-                    </a>
-                  </td>
-                </tr>
-                {{/each}}
-              </tbody>
-            </table>
-            <div>
+          <a href="/admin/novedades/agregar" style="max-width: 140px; margin: 8px;" class="btn btn-primary">
+            Nuevo</a>
+        </div>
+        <hr>
+        <div>
+          {{!-- file three --}}
+          <div class="row">
+            <div class="col">
+              <table class="table">
+                <thead>
+                  <tr class="table-dark" style="cursor: pointer;">
+                    <th scope="col"></th>
+                    <th scope="col">Título</th>
+                    <th class="text-end">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each novedades}}
+                  <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{titulo}}</td>
+                    <td class="text-end">
+                      <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary" title="modificar"
+                        class="btn btn-secondary">
+                        <i class="fas fa-pencil"></i></a>
+                      <a href="/admin/novedades/eliminar/{{id}}" style="max-width: 140px; margin-top: 10px;"
+                        class="btn btn-primary" title="Eliminar" class="btn btn-secondary">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
               <div>
-                <p class="text-center">"Tenga una mejor experiencia con envíos en línea de TRANSPORTE.
-                  Envíe y entregue paquetes más rápida y fácilmente que nunca."
-                  <p />
-                  <hr>
-                  <a style="margin-left: -10px" class="btn btn-danger" , href="/admin/login/logout">Cerrar
-                    sección
-                    <i style="min-width: 32px; margin-left: 10px;" class="fas fa-sign-out-alt">
-                    </i>
-                  </a>
+                <div>
+                  <p class="text-center">"Tenga una mejor experiencia"
+                    <p />
+                    <hr>
+                    <a style="max-width: 140px; padding: 6 31 6 31px;" class="btn btn-danger" , href="/admin/login/logout">
+                      Cerrar sección
+                      </i>
+                    </a>
+                </div>
               </div>
             </div>
-          </div>

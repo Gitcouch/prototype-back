@@ -71,7 +71,6 @@ router.post('/modificar', async (req, res, next) => {
     } 
  
    catch (error) {
-    console.log(error);
     res.render('admin/modificar', {
       layout: 'admin/layout',
       error: true,

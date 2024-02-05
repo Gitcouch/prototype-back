@@ -2,9 +2,9 @@ var express = require('express');
 
 var router = express.Router();
 var cloudinary = require('cloudinary').v2;
-var nodemailer = require('nodemailer');
 
 var novedadesModel = require('../models/novedadesModel');
+const transport = require('../mailtrap.config');
 
 router.get('/novedades', async (req, res) => {
   let novedades = await novedadesModel.getNovedades();
@@ -33,21 +33,12 @@ router.get('/novedades', async (req, res) => {
 
 router.post('/contacto', async (req, res) => {
   const mail = {
-    to: 'imaezart@gmail.com',
+    to: process.env.SMTP_MAIL,
+    from: req.body.email,
     subject: 'contacto web',
     html: `${req.body.nombre} se contacto a traves de la web y quiere más información a este correo: ${req.body.email}
         <br> Además, hizo el siguiente comentario: ${req.body.mensaje} <br> Su tel es: ${req.body.telefono}`
-
   }
-
-  const transport = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
-    }
-  });
 
   await transport.sendMail(mail)
 

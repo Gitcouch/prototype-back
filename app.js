@@ -1,19 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
+var createError = require("http-errors");
+var express = require("express");
 var path = require("path");
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
 require("dotenv").config();
-var session = require('express-session');
-var fileUpload = require('express-file-upload');
-var cors = require('cors');
+var session = require("express-session");
+var fileUpload = require("express-fileupload");
+var cors = require("cors");
 
-var indexRouter = require('./routes/index');
-var usuariosRouter = require('./routes/usuarios');
-var loginRouter = require('./routes/admin/login');
-var adminRouter = require('./routes/admin/novedades');
-var apiRouter = require('./routes/api');
+var indexRouter = require("./routes/index");
+var usuariosRouter = require("./routes/usuarios");
+var loginRouter = require("./routes/admin/login");
+var adminRouter = require("./routes/admin/novedades");
+var apiRouter = require("./routes/api");
 
 var app = express();
 
@@ -47,10 +47,12 @@ const secured = async (req, res, next) => {
   }
 };
 
-app.use(fileUpload({
+app.use(
+  fileUpload({
     useTempFiles: true,
-    tempFileDir: '/tmp/'
-  }));
+    tempFileDir: "/tmp/",
+  })
+);
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuariosRouter);

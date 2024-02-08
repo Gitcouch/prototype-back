@@ -16,15 +16,18 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label>Imagen: <input type="file" class="form-control" name="imagen" id="imagen" /></label>
-            </div>
-            <div class="mb-3 row">
                 <div class="col-sm-4">
                     <textarea type-"text" class="form-control" placeholder="Cuerpo" name="cuerpo"></textarea>
                 </div>
             </div>
+            <div class="mb-3 row">
+                <div class="col-sm-3">
+                <label>Imagen: <input style="width: 35.25rem;" type="file" class="form-control" name="imagen" id="imagen" /></label>
+                </div>
+            </div>
             <br>
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">volver al listado</button>
             </form>
             {{#if error}}
             <p>{{message}}</p>

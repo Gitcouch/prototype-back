@@ -1,32 +1,35 @@
-<link rel='stylesheet' href='/stylesheets/layout.css' />
-
 <div class="container" style="margin-top: 10px;">
   <div class="row">
     <div class="col">
-      <p class="left">Hola {{usuario}} ! </p>
-      {{!-- file one --}}
+      <div class="user-info">
+      <h2 class="left">Hola {{usuario}} ! </h2>
+      <a style="padding: 6px 25px;" class="btn btn-secondary" href="/admin/login/logout">
+                    Cerrar sesión
+                    </i>
+                  </a>
+      </div>
       <div>
         <h1 class="text-center">Bienvenida al administrador</h1>
         <div>
           <p class="text-secondary">
-            En esta sección se cargaran las novedades.
+            En esta sección se cargarán las novedades.
           </p>
         </div>
-        {{!-- file two --}}
         <div class="row">
           <a href="/admin/novedades/agregar" style="max-width: 140px; margin: 8px;" class="btn btn-primary">
-            Nuevo</a>
+            Nuevo
+          </a>
         </div>
         <hr>
         <div>
-          {{!-- file three --}}
           <div class="row">
             <div class="col">
               <table class="table">
                 <thead>
                   <tr class="table-dark" style="cursor: pointer;">
-                    <th scope="col">#</th>
+                    <th scope="col"></th>
                     <th scope="col">Título</th>
+                    <th scope="col">Subtítulo</th>
                     <th scope="col">Imagen</th>
                     <th class="text-end">Acciones</th>
                   </tr>
@@ -34,17 +37,19 @@
                 <tbody>
                   {{#each novedades}}
                   <tr>
-                    <th scope="row">{{id}}</th>
+                    <td>{{id}}</th>
                     <td>{{titulo}}</td>
+                    <td>{{subtitulo}}</td>
                     <td>{{{imagen}}}</td>
-                    <td class="text-end">
-                      <a href="/admin/novedades/modificar/{{id}}" class="btn btn-sm btn-secondary" title="modificar"
-                        class="btn btn-secondary">
-                        <i class="fas fa-pencil"></i></a>
-                      <a href="/admin/novedades/eliminar/{{id}}" style="max-width: 140px; margin-top: 10px;"
-                        class="btn btn-primary" title="Eliminar" class="btn btn-secondary">
-                        <i class="fa fa-trash"></i>
-                      </a>
+                    <td>
+                      <div class="actions">
+                        <a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary action" title="Modificar">
+                          <i class="fa fa-pen"></i>
+                        </a>
+                        <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-primary action" title="Eliminar">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </div>
                     </td>
                   </tr>
                   {{/each}}
@@ -52,13 +57,13 @@
               </table>
               <div>
                 <div>
-                  <p class="text-center">"Tenga una mejor experiencia"
-                    <p />
-                    <hr>
-                    <a style="max-width: 140px; padding: 6 31 6 31px;" class="btn btn-danger" , href="/admin/login/logout">
-                      Cerrar sesión
-                      </i>
-                    </a>
+                  <p class="text-center">"Tenga una mejor experiencia"</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,31 @@
-<link rel="stylesheet" href="/stylesheets/layout.css" />
-<div class="container" style="margin-top:100px;">
-    <div class="row">
-        <form action="/admin/login" method="post">
-            <div class="mb-3 row">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputUser" placeholder="Usuario" name="user">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"
-                        name="password">
-                </div>
-            </div>
-            <hr />
-            <button type="submit" class="btn btn-primary">Ingresar</button>
-        </form>
-        {{#if error}}
+<div class='container' style='margin-left:180px'>
+  <div class='row justify-content-center'>
+    <div class='col-sm-6'> <!-- Cambiado de col-sm-2 a col-sm-6 para que el formulario sea más ancho -->
+      <form action='/admin/login' method='post'>
+        <div class='mb-1'>
+          <input
+            type='text'
+            class='form-control'
+            id='inputUser'
+            placeholder='Usuario'
+            name='user'
+          />
+        </div>
+        <div class='mb-1'>
+          <input
+            type='password'
+            class='form-control'
+            id='inputPassword'
+            placeholder='Contraseña'
+            name='password'
+          />
+        </div>
+        <hr />
+        <button type='submit' class='btn btn-primary btn-block'>Ingresar</button> <!-- Añadido btn-block para que el botón ocupe todo el ancho -->
+      </form>
+      {{#if error}}
         <p>Usuario y/o contraseña incorrectos</p>
-        {{/if}}
+      {{/if}}
     </div>
+  </div>
 </div>
